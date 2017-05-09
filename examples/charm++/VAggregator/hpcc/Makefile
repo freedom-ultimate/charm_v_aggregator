@@ -1,4 +1,4 @@
-DIRS = randomAccessGroup randomAccessArray
+DIRS = randomAccessGroup randomAccessArray randomAccessCharm
 
 all:
 	for d in $(DIRS); do \

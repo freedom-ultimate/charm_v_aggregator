@@ -1,5 +1,5 @@
--include ../../../common.mk
-CHARMC = ../../../../bin/charmc
+-include ../../../../common.mk
+CHARMC = ../../../../../bin/charmc
 BINARY = random_access
 
 SRCFILES = $(wildcard *.C)
@@ -25,7 +25,7 @@ random_access: $(OBJFILES)
 	$(CHARMC) $(CHARMCFLAGS) $<
 
 test: $(BINARY)
-	$(call run, +p4 ./random_access 14 )
+	$(call run, +p4 ./random_access 14 8 )
 
 clean:
 	rm -f *.o *.decl.h *.def.h $(BINARY) charmrun*
