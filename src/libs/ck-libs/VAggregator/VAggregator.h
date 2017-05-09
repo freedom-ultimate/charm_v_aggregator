@@ -5,7 +5,7 @@
 #include <vector>
 #include <list>
 #include <map>
-#include "NDMeshStreamer.decl.h"
+#include "VAggregator.decl.h"
 #include "DataItemTypes.h"
 #include "completion.h"
 #include "ckarray.h"
@@ -130,7 +130,7 @@ public:
   void enablePeriodicFlushing(){
     if (progressPeriodInMs_ <= 0) {
       if (myIndex_ == 0) {
-        CkPrintf("Using periodic flushing for NDMeshStreamer requires"
+        CkPrintf("Using periodic flushing for VAggregator requires"
                  " setting a valid periodic flush period. Defaulting"
                  " to 10 ms.\n");
       }
@@ -1378,7 +1378,7 @@ public:
 };
 
 #define CK_TEMPLATES_ONLY
-#include "NDMeshStreamer.def.h"
+#include "VAggregator.def.h"
 #undef CK_TEMPLATES_ONLY
 
 #endif

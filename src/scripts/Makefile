@@ -80,7 +80,7 @@ ARMCI: charm++ LIBS
 
 f90charm: charm++ $(L)/libf90charm.a
 
-DEFAULT_LIBS= completion NDMeshStreamer multicast pythonCCS io ckloop
+DEFAULT_LIBS= completion VAggregator multicast pythonCCS io ckloop
 
 default_libs: $(DEFAULT_LIBS)
 
@@ -97,7 +97,7 @@ fftlib: charm-core
 multicast: charmxi
 pythonCCS: charmxi
 completion: charmxi
-NDMeshStreamer: charm-core completion
+VAggregator: charm-core completion
 
 $(L)/libmpi-mainmodule.a: mpi-mainmodule.o
 	$(CHARMC) -o $@ $<

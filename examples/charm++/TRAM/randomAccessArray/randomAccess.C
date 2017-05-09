@@ -1,4 +1,4 @@
-#include "NDMeshStreamer.h"
+#include "VAggregator.h"
 
 typedef CmiUInt8 dtype;
 #include "randomAccess.decl.h"

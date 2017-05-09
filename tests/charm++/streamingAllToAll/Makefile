@@ -6,7 +6,7 @@ OBJS = ataTest.o
 all: ataTest
 
 ataTest: $(OBJS)
-	$(CHARMC) -language charm++  -o ataTest -module NDMeshStreamer $(OBJS)
+	$(CHARMC) -language charm++  -o ataTest -module VAggregator $(OBJS)
 
 ataTest.decl.h: ataTest.ci
 	$(CHARMC)  ataTest.ci

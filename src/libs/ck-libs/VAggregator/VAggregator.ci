@@ -1,4 +1,4 @@
-module NDMeshStreamer {
+module VAggregator {
   extern module completion;
 
   include "DataItemTypes.h";

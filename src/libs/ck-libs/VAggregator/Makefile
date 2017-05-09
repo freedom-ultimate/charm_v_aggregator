@@ -2,26 +2,26 @@ CDIR=../../../..
 INCDIR=$(CDIR)/include
 CHARMC=$(CDIR)/bin/charmc $(OPTS)
 
-LIB=libmoduleNDMeshStreamer.a
-LIBOBJ=NDMeshStreamer.o
+LIB=libmoduleVAggregator.a
+LIBOBJ=VAggregator.o
 
-HEADERS= $(INCDIR)/NDMeshStreamer.decl.h \
-         $(INCDIR)/NDMeshStreamer.def.h \
-         $(INCDIR)/NDMeshStreamer.h \
+HEADERS= $(INCDIR)/VAggregator.decl.h \
+         $(INCDIR)/VAggregator.def.h \
+         $(INCDIR)/VAggregator.h \
 	 $(INCDIR)/VirtualRouter.h \
          $(INCDIR)/DataItemTypes.h
 LIBDEST = $(CDIR)/lib/$(LIB)
 
-CIFILES = NDMeshStreamer.ci
+CIFILES = VAggregator.ci
 
 all: $(LIBDEST) $(HEADERS)
 
-$(INCDIR)/NDMeshStreamer.decl.h: NDMeshStreamer.decl.h
-	/bin/cp NDMeshStreamer.decl.h $(CDIR)/include
-$(INCDIR)/NDMeshStreamer.def.h: NDMeshStreamer.def.h
-	/bin/cp NDMeshStreamer.def.h $(CDIR)/include
-$(INCDIR)/NDMeshStreamer.h: NDMeshStreamer.h
-	/bin/cp NDMeshStreamer.h $(CDIR)/include
+$(INCDIR)/VAggregator.decl.h: VAggregator.decl.h
+	/bin/cp VAggregator.decl.h $(CDIR)/include
+$(INCDIR)/VAggregator.def.h: VAggregator.def.h
+	/bin/cp VAggregator.def.h $(CDIR)/include
+$(INCDIR)/VAggregator.h: VAggregator.h
+	/bin/cp VAggregator.h $(CDIR)/include
 $(INCDIR)/VirtualRouter.h: VirtualRouter.h
 	/bin/cp VirtualRouter.h $(CDIR)/include
 $(INCDIR)/DataItemTypes.h: DataItemTypes.h
@@ -29,12 +29,12 @@ $(INCDIR)/DataItemTypes.h: DataItemTypes.h
 
 $(LIBDEST): $(LIBOBJ)
 	$(CHARMC) -o $(LIBDEST) $(LIBOBJ)
-	/bin/cp libmoduleNDMeshStreamer.dep $(CDIR)/lib
+	/bin/cp libmoduleVAggregator.dep $(CDIR)/lib
 
-NDMeshStreamer.def.h: NDMeshStreamer.decl.h
+VAggregator.def.h: VAggregator.decl.h
 
-NDMeshStreamer.decl.h: NDMeshStreamer.ci $(CDIR)/bin/charmxi
-	$(CHARMC) -c NDMeshStreamer.ci
+VAggregator.decl.h: VAggregator.ci $(CDIR)/bin/charmxi
+	$(CHARMC) -c VAggregator.ci
 
 clean:
 	-rm -fr *.o *.decl.h *.def.h core $(LIB)
@@ -43,7 +43,7 @@ include Make.depends
 
 DEPENDFILE = Make.depends
 
-depends:  NDMeshStreamer.ci NDMeshStreamer.def.h
+depends:  VAggregator.ci VAggregator.def.h
 	echo "Creating " $(DEPENDFILE) " ..."; 	\
 	if [ -f $(DEPENDFILE) ]; then \
            /bin/cp -f $(DEPENDFILE) $(DEPENDFILE).old; \

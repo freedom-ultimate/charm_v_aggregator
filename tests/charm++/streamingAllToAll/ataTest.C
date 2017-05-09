@@ -1,4 +1,4 @@
-#include "NDMeshStreamer.h"
+#include "VAggregator.h"
 #include "ataTest.decl.h"
 #include "TopoManager.h"
 #include "ataDatatype.h"

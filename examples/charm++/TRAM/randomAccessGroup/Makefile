@@ -11,7 +11,7 @@ CHARMCFLAGS= $(OPTS)
 all: $(BINARY)
 
 random_access: $(OBJFILES)
-	$(CHARMC) $(CHARMCFLAGS) -language charm++ -o $@ $+ -module NDMeshStreamer
+	$(CHARMC) $(CHARMCFLAGS) -language charm++ -o $@ $+ -module VAggregator
 
 .SECONDARY: $(patsubst %.C,%.decl.h,$(wildcard *.C))
 .SECONDARY: $(patsubst %.C,%.def.h,$(wildcard *.C))
