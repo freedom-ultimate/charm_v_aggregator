@@ -5,7 +5,7 @@ SIMPLE_DIRS = completion cache sparseContiguousReducer tcharm ampi idxl \
               multiphaseSharedArrays io \
               armci collide mblock barrier irecv liveViz \
               taskGraph search MeshStreamer VAggregator pose \
-              state_space_searchengine
+              state_space_searchengine graphio
 DIRS = $(SIMPLE_DIRS) pythonCCS
 FEM_DIRS = fem ifem datatransfer netfem
 
@@ -36,6 +36,7 @@ taskGraph:
 search:
 datatransfer: ampi fem collide
 VAggregator: completion
+graphio:
 
 pythonCCS:
 	-(CHARMINC=../../../include;. $$CHARMINC/conv-config.sh; \
